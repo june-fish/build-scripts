@@ -235,14 +235,21 @@ jobs:
           tar -cJf katsu-work/chroot.tar katsu-work/chroot
           mv katsu-work/chroot.tar katsu-work/${{ env.artifact }}.tar
           # compress tar as zst, output as .tar.zst
-          zstd -T0 -19 katsu-work/${{ env.artifact }}.tar -o katsu-work/${{ env.artifact }}.tar.zst
+          # have an exception for WSL, as it doesn't support zstd
+          if [ "${{ matrix.variant }}" = "wsl/wsl" ]; then
+            gzip -9 -c katsu-work/${{ env.artifact }}.tar > katsu-work/${{ env.artifact }}.tar.gz
+          else
+            zstd -T0 -19 katsu-work/${{ env.artifact }}.tar -o katsu-work/${{ env.artifact }}.tar.zst
+          fi
           popd
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.artifact }}-tar
-          path: katsu/katsu-work/*.tar.zst
+          path: |
+            katsu/katsu-work/*.tar.zst
+            katsu/katsu-work/*.tar.gz
           compression-level: 0
 
   #### LIVE ISO PUSH ####
