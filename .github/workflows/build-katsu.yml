@@ -237,7 +237,7 @@ jobs:
           # compress tar as zst, output as .tar.zst
           # have an exception for WSL, as it doesn't support zstd
           if [ "${{ matrix.variant }}" = "wsl/wsl" ]; then
-            gzip -9 katsu-work/${{ env.artifact }}.tar > katsu-work/${{ env.artifact }}.tar.gz
+            gzip -9 -c katsu-work/${{ env.artifact }}.tar > katsu-work/${{ env.artifact }}.tar.gz
           else
             zstd -T0 -19 katsu-work/${{ env.artifact }}.tar -o katsu-work/${{ env.artifact }}.tar.zst
           fi
