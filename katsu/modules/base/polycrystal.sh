@@ -2,7 +2,7 @@
 set -euo pipefail
 
 cleanup() {
-    for mnt in sys proc; do
+    for mnt in sys proc dev/pts dev; do
         umount /mnt/mock-mount/$mnt
     done
     umount /mnt/mock-mount
@@ -15,7 +15,7 @@ if [ -x "$(command -v polycrystal)" ]; then
     mount --bind / /mnt/mock-mount
     mount --make-private /mnt/mock-mount
     mount --bind /mnt/mock-mount /mnt/mock-mount
-    for mnt in proc sys; do
+    for mnt in proc sys dev dev/pts; do
         mount --bind /$mnt /mnt/mock-mount/$mnt
     done
 
