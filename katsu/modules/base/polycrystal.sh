@@ -19,5 +19,5 @@ if [ -x "$(command -v polycrystal)" ]; then
         mount --bind /$mnt /mnt/mock-mount/$mnt
     done
 
-    chroot /mnt/mock-mount bash -c polycrystal
+    chroot /mnt/mock-mount bash -c 'env GPGME_DEBUG=9 polycrystal'
 fi
