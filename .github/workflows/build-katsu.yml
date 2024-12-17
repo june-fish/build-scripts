@@ -135,6 +135,10 @@ jobs:
           - gnome/gnome-live
           - plasma/plasma-live
           - xfce/xfce-live
+          - flagship/flagship-live-anaconda
+          - gnome/gnome-live-anaconda
+          - plasma/plasma-live-anaconda
+          - xfce/xfce-live-anaconda
     runs-on: ${{ matrix.arch == 'x86_64' && 'ubuntu-latest' || 'arm64' }}
     container:
       image: ghcr.io/terrapkg/builder:f41
