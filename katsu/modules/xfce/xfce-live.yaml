@@ -4,6 +4,7 @@ import:
   - ../base/base.yaml
   - ../live/live.yaml
   - ../base/desktop.yaml
+  - ../live/readymade.yaml
   - xfce.yaml
 
 distro: Ultramarine Linux 41 (Xfce Edition)

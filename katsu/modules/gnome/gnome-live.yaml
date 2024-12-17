@@ -4,6 +4,7 @@ import:
   - ../base/base.yaml
   - ../live/live.yaml
   - ../base/desktop.yaml
+  - ../live/readymade.yaml
   - gnome.yaml
 
 distro: Ultramarine GNOME 41
