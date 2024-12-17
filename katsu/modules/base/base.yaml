@@ -3,9 +3,6 @@ scripts:
     - id: cleanup
       name: Clean up system
       file: cleanup.sh
-    - id: polycrystal
-      name: Install Flatpaks via Polycrystal
-      file: polycrystal.sh
     - id: selinux-setup
       name: Set up SELinux
       file: selinux.sh

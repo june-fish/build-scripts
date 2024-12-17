@@ -3,6 +3,7 @@ builder: dnf
 import:
   - ../base/base.yaml
   - ../live/live.yaml
+  - ../base/desktop.yaml
   - xfce.yaml
 
 distro: Ultramarine Linux 41 (Xfce Edition)
