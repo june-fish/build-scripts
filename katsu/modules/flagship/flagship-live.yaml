@@ -3,6 +3,7 @@ builder: dnf
 import:
   - ../base/base.yaml
   - ../live/live.yaml
+  - ../base/desktop.yaml
   - flagship.yaml
 
 distro: Ultramarine Linux 41 (Flagship Edition)

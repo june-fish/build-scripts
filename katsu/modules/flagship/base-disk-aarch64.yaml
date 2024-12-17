@@ -11,6 +11,7 @@ distro: Ultramarine Linux 41 (Flagship Edition)
 import:
   - ../base/base.yaml
   - ../base/base-disk.yaml
+  - ../base/desktop.yaml
   - flagship.yaml
 
 scripts:
