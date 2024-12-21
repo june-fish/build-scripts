@@ -231,7 +231,7 @@ jobs:
           rm -rf /etc/rpm/macros.image-language-conf
           chcon system_u:object_r:install_exec_t:s0 "$(which katsu)"
           pushd katsu
-          KATSU_LOG=trace katsu -v --output=fs "modules/${{ matrix.variant }}.yaml"
+          KATSU_LOG=trace katsu -v --output=folder "modules/${{ matrix.variant }}.yaml"
           tar -cJf katsu-work/chroot.tar katsu-work/chroot
           mv katsu-work/chroot.tar katsu-work/${{ env.artifact }}.tar
           # compress tar as zst, output as .tar.zst
