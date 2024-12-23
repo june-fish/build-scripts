@@ -232,7 +232,9 @@ jobs:
           chcon system_u:object_r:install_exec_t:s0 "$(which katsu)"
           pushd katsu
           KATSU_LOG=trace katsu -v --output=folder "modules/${{ matrix.variant }}.yaml"
-          tar -C katsu-work/chroot -cf katsu-work/chroot.tar katsu-work/chroot
+          pushd katsu-work/chroot
+          tar -cf ../chroot.tar .
+          popd
           mv katsu-work/chroot.tar katsu-work/${{ env.artifact }}.tar
           # compress tar as zst, output as .tar.zst
           # have an exception for WSL, as it doesn't support zstd
