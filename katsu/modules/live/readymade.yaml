@@ -3,3 +3,4 @@ dnf:
   exec: dnf4
   packages:
     - readymade
+    - taidan
