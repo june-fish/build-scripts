@@ -1,0 +1,8 @@
+dnf:
+  releasever: 41
+  exec: dnf4
+  packages:
+    - anaconda-dracut
+    - anaconda-live
+    - anaconda-install-env-deps
+    - "@anaconda-tools"
